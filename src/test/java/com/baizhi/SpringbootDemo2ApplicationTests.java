@@ -31,6 +31,10 @@ public class SpringbootDemo2ApplicationTests {
     }
     @Test
     public void select(){
+        
+        
+        
+        
         User user=new User();
         user.setId(1);
         List<User> select = userDao.select(user);
