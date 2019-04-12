@@ -33,10 +33,6 @@ public class SpringbootDemo2ApplicationTests {
     public void select(){
         User user=new User();
         user.setId(1);
-        List<User> select = userDao.select(user);
-        for (User user1 : select) {
-            System.out.println(user1);
-        }
     }
 
     @Test

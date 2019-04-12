@@ -22,8 +22,8 @@ public class UserController {
     }
 
     @RequestMapping("selectAll")
-    public String selectAll(String name, ModelMap modelMap) {
-        List<User> list = userService.selectAll(name);
+    public String selectAll(ModelMap modelMap) {
+        List<User> list = userService.selectAll();
         modelMap.addAttribute("list", list);
         return "UserList";
     }
