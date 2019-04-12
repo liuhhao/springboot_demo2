@@ -70,8 +70,10 @@
                         <td>${user.username}</td>
                         <td>${user.pwd}</td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/dept/deleteOneDept.do?id=${dt.id}" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-trash"></span> 删除</a>
-                            <a href="${pageContext.request.contextPath}/dept/selectOneDept.do?id=${dt.id}" class="btn btn-xs btn-info"><span class="glyphicon glyphicon-edit"></span> 修改</a>
+                            <a href="${pageContext.request.contextPath}/user/deleteOneUser.do?id=${user.id}"
+                               class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-trash"></span> 删除</a>
+                            <a href="${pageContext.request.contextPath}/user/selectOneUser.do?id=${user.id}"
+                               class="btn btn-xs btn-info"><span class="glyphicon glyphicon-edit"></span> 修改</a>
 
                         </td>
                     </tr>

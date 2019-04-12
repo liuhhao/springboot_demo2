@@ -26,4 +26,14 @@ public class UserServiceImpl implements UserService {
     public void insert(User user) {
         userDao.insert(user);
     }
+
+    @Override
+    public void update(User user) {
+        userDao.updateByPrimaryKeySelective(user);
+    }
+
+    @Override
+    public void delete(Integer id) {
+        userDao.deleteByPrimaryKey(id);
+    }
 }

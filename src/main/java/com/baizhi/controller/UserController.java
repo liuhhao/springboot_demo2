@@ -33,4 +33,23 @@ public class UserController {
         userService.insert(user);
         return "redirect:/user/selectAll.do";
     }
+
+    @RequestMapping("selectOneUser")
+    public String selectOneUser(Integer id, ModelMap modelMap) {
+        User user = userService.selectOne(id);
+        modelMap.addAttribute("user", user);
+        return "updateUser";
+    }
+
+    @RequestMapping("updateUser")
+    public String updateUser(User user) {
+        userService.update(user);
+        return "redirect:/user/selectAll.do";
+    }
+
+    @RequestMapping("deleteOneUser")
+    public String deleteOneUser(Integer id) {
+        userService.delete(id);
+        return "redirect:/user/selectAll.do";
+    }
 }
