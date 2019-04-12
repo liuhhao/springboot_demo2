@@ -6,6 +6,8 @@ import com.baizhi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -13,5 +15,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User selectOne(Integer id) {
         return userDao.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public List<User> selectAll() {
+        return userDao.selectAll();
+    }
+
+    @Override
+    public void insert(User user) {
+        userDao.insert(user);
     }
 }

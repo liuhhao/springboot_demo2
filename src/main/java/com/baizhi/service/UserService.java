@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface UserService {
     public User selectOne(Integer id);
-
     public List<User> selectAll();
+
+    public void insert(User user);
 }

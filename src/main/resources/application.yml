@@ -1,6 +1,9 @@
 server:
   port: 8085
   context-path: /springboot_demo2
+  jsp-servlet:
+    init-parameters:
+      development: true
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource

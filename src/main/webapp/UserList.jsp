@@ -19,16 +19,17 @@
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
-        <iframe src="${pageContext.request.contextPath}/iframe/nav.jsp" width="100%" frameborder="0"></iframe>
-    </div>
+    <%--    <div class="row">
+            <iframe src="${pageContext.request.contextPath}/iframe/nav.jsp" width="100%" frameborder="0"></iframe>
+        </div>--%>
     <!--按钮工具栏-->
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-2">
             <!--按钮组-->
             <div class="btn-group">
-                <a href="${pageContext.request.contextPath}/department/addDepartment.jsp" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-plus"></span> 添加科室</a>
+                <a href="${pageContext.request.contextPath}/addUser.jsp" class="btn btn-info btn-sm"><span
+                        class="glyphicon glyphicon-plus"></span> 添加用户</a>
                 <a href="javascript:void(0)" id="delete" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span> 删除选中</a>
             </div>
         </div>
@@ -56,18 +57,18 @@
                         <%--<input type="submit" value="删除选中"/>--%>
                     </th>
                     <th>编号</th>
-                    <th>姓名<th>
-                    <th>电话</th>
-                    <th style="width: 20%;">操作</th>
+                    <th>姓名</th>
+                    <th>密码</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="dt" items="${requestScope.list}" varStatus="st">
+                <c:forEach var="user" items="${requestScope.list}" varStatus="st">
                     <tr>
-                        <td style="text-align: center;"><input type="checkbox" name="ids" value="${dt.id}"/></td>
+                        <td style="text-align: center;"><input type="checkbox" name="ids" value="${user.id}"/></td>
                         <td>${st.count}</td>
-                        <td>${dt.name}</td>
-                        <td>${dt.tel}</td>
+                        <td>${user.username}</td>
+                        <td>${user.pwd}</td>
                         <td>
                             <a href="${pageContext.request.contextPath}/dept/deleteOneDept.do?id=${dt.id}" class="btn btn-xs btn-warning"><span class="glyphicon glyphicon-trash"></span> 删除</a>
                             <a href="${pageContext.request.contextPath}/dept/selectOneDept.do?id=${dt.id}" class="btn btn-xs btn-info"><span class="glyphicon glyphicon-edit"></span> 修改</a>

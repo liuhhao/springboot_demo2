@@ -27,4 +27,10 @@ public class UserController {
         modelMap.addAttribute("list", list);
         return "UserList";
     }
+
+    @RequestMapping("addUser")
+    public String addUser(User user) {
+        userService.insert(user);
+        return "redirect:/user/selectAll.do";
+    }
 }
