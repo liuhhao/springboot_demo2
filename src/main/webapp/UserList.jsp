@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="col-md-3">
-            <form action="${pageContext.request.contextPath}/dept/selectAll.do" class="form form-inline input-group">
+            <form action="${pageContext.request.contextPath}/user/selectAll.do" class="form form-inline input-group">
                 <input type="text" class="form-control" placeholder="请输入用户名" name="deptName" value="${requestScope.deptName}" id="name" />
                 <span class="input-group-btn"><input type="submit" class="btn btn-success" value="搜索" /></span>
             </form>
