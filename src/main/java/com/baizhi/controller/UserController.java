@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("user")
@@ -14,9 +15,16 @@ public class UserController {
     @Autowired
     private UserService userService;
     @RequestMapping("selectOne")
-    public String selectAll(ModelMap modelMap){
+    public String selectOne(ModelMap modelMap) {
         User user=userService.selectOne(1);
         modelMap.addAttribute("user",user);
         return "index";
+    }
+
+    @RequestMapping("selectAll")
+    public String selectAll(ModelMap modelMap) {
+        List<User> list = userService.selectAll();
+        modelMap.addAttribute("list", list);
+        return "UserList";
     }
 }

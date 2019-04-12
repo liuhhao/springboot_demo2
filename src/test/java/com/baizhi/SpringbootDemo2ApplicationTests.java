@@ -24,22 +24,26 @@ public class SpringbootDemo2ApplicationTests {
     public void updateByPrimaryKey() {
         User user=new User();
         user.setId(1);
-        user.setName("张三");
+        user.setUsername("张三");
         int i = userDao.updateByPrimaryKeySelective(user);
         System.out.println(i);
 
     }
     @Test
     public void select(){
-        
-        
-        
-        
         User user=new User();
         user.setId(1);
         List<User> select = userDao.select(user);
         for (User user1 : select) {
             System.out.println(user1);
+        }
+    }
+
+    @Test
+    public void test() {
+        List<User> users = userDao.selectAll();
+        for (User user : users) {
+            System.out.println(user);
         }
     }
 

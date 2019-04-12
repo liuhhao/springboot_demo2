@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,7 +14,6 @@ import javax.persistence.Table;
 public class User {
     @Id
     private Integer id;
-    @Column(name="username")
-    private String name;
+    private String username;
     private String pwd;
 }
