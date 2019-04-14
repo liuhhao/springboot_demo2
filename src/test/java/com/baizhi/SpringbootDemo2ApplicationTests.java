@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -31,8 +32,15 @@ public class SpringbootDemo2ApplicationTests {
     }
     @Test
     public void select(){
-        User user=new User();
-        user.setId(1);
+        String name = "小";
+        Example example = new Example(User.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andLike("username", name);
+        System.out.println(criteria);
+        List<User> list = userDao.selectByExample(example);
+        for (User user : list) {
+            System.out.println(user);
+        }
     }
 
     @Test
